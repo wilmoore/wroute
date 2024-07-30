@@ -1,19 +1,16 @@
 {
   "name": "wroute",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "typed http router with constant access time.",
   "main": "router",
   "scripts": {
-    "prestart": "sh env.sh",
-    "start": "node --env-file=.env -r ts-node/register server",
-    "prestart:dev": "sh env.sh",
-    "start:dev": "node --watch --env-file=.env -r ts-node/register server"
+    "dev": "node --watch --env-file=example/.env.template -r ts-node/register example/server"
   },
   "keywords": [
-    "opinionated",
-    "typesafe",
     "http",
+    "no-dependencies",
     "router",
+    "typesafe",
     "typescript"
   ],
   "author": "Wil Moore III <wil.moore@wilmoore.com>",

@@ -1,5 +1,5 @@
 import { createServer } from 'node:http'
-import { router } from './router'
+import { router } from '../'
 import { routes } from './routes'
 
 const port = Number(process.env.PORT || 3000)

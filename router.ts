@@ -1,4 +1,4 @@
-import { Method, Wroutes } from './router.types'
+import { Method, Wroutes } from './types'
 import {
   IncomingMessage as Request,
   ServerResponse as Response,
