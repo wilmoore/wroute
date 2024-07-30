@@ -24,7 +24,6 @@ pnpm add wroute
 - `404` status when request is to a missing **endpoint**
 - `405` status when request is to a missing **method**
 
-## example
 ```js
 import { router } from 'wroute'
 import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
@@ -48,33 +47,32 @@ server.listen(port, host, () => console.log(
 ))
 ```
 
+###### :rocket: launch the server
 ```
 » node --watch --env-file=.env -r ts-node/register server
 🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
 
+###### `200`
 ```
 » curl -s 'http://0.0.0.0:3000' | yq .content
 Hello World!
 ```
 
+###### `404`
 ```
-» curl -sI 'http://0.0.0.0:3000/not-here'
+» curl -sI 'http://0.0.0.0:3000/nope'
 HTTP/1.1 404 Not Found
 Content-Type: text/plain
-Date: Tue, 30 Jul 2024 22:24:08 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
+...
 ```
 
+###### `405`
 ```
-» curl -sI -XPOST 'http://0.0.0.0:3000'
+» curl -sI 'http://0.0.0.0:3000'
 HTTP/1.1 405 Method Not Allowed
 Content-Type: text/plain
-Date: Tue, 30 Jul 2024 22:24:30 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-Transfer-Encoding: chunked
+...
 ```
 
 ## Licenses
