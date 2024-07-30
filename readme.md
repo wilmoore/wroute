@@ -11,14 +11,13 @@
 pnpm add wroute
 ```
 
-## expose a server on port `3000`
+## expose a server
+> **PORT** `3000` **HOST** `0.0.0.0`
 
+###### :rocket: `server.js`
 ```js
 import { router } from 'wroute'
-import {
-  IncomingMessage as Request,
-  ServerResponse as Response
-} from 'node:http'
+import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
 
 const port = Number(process.env.PORT || 3000)
 const host = String(process.env.HOST || `0.0.0.0`)
@@ -37,6 +36,7 @@ server.listen(port, host, () => console.log(
 ))
 ```
 
+###### :link: send request
 ```
 » curl -s 'http://0.0.0.0:3000' | yq .content
 Hello World!
