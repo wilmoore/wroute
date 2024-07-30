@@ -45,13 +45,11 @@ server.listen(port, host, () => console.log(
 ))
 ```
 
-## :rocket: run the server
 ```
 » node --watch --env-file=.env -r ts-node/register server
 🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
 
-## :satellite: send a request
 ```
 » curl -s 'http://0.0.0.0:3000' | yq .content
 Hello World!
