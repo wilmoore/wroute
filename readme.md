@@ -21,8 +21,8 @@ pnpm add wroute
 - typed
 
 ## usage
-- `404` status when request is to a missing **endpoint**
-- `405` status when request is to a missing **method**
+- [`404`] status when request is to a missing **endpoint**
+- [`405`] status when request is to a missing **method**
 
 ```js
 import { router } from 'wroute'
@@ -78,3 +78,7 @@ Content-Type: text/plain
 ## Licenses
 
 [![LICENSE](http://img.shields.io/npm/l/wroute.svg)](license)
+
+---
+[`404`]: #404
+[`405`]: #405
