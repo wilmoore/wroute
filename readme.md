@@ -58,6 +58,25 @@ server.listen(port, host, () => console.log(
 Hello World!
 ```
 
+```
+» curl -sI 'http://0.0.0.0:3000/not-here'
+HTTP/1.1 404 Not Found
+Content-Type: text/plain
+Date: Tue, 30 Jul 2024 22:24:08 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+```
+
+```
+» curl -sI -XPOST 'http://0.0.0.0:3000'
+HTTP/1.1 405 Method Not Allowed
+Content-Type: text/plain
+Date: Tue, 30 Jul 2024 22:24:30 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+```
+
 ## Licenses
 
 [![LICENSE](http://img.shields.io/npm/l/wroute.svg)](license)
