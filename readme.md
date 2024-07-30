@@ -10,9 +10,6 @@
 > **Typed HTTP routing in 0(1) time**
 A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated.
 
-# wroute
-> Typed HTTP routing in 0(1) time.
-
 ## features
 
 - responds with `404` status when requesting a missing **endpoint**
