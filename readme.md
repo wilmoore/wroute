@@ -7,20 +7,21 @@
 [![Version](https://img.shields.io/npm/v/wroute?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/wroute)
 [![Downloads](https://img.shields.io/npm/dt/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/wroute)
 
-> **Typed HTTP routing in 0(1) time**
-A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated.
+## wroute
+> A bearbones, tiny core, typed http router with constant access time.
 
-## features
 
-- responds with `404` status when requesting a missing **endpoint**
-- responds with `405` status when requesting a missing **method**
-
-## install
 ```shell
 pnpm add wroute
 ```
 
-## :rocket: create a `server.ts`
+## features
+
+- O(1)
+- `404` status when request is to a missing **endpoint**
+- `405` status when request is to a missing **method**
+
+## example
 ```js
 import { router } from 'wroute'
 import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
@@ -44,13 +45,13 @@ server.listen(port, host, () => console.log(
 ))
 ```
 
-## :running: run the server
+## :rocket: run the server
 ```
 » node --watch --env-file=.env -r ts-node/register server
 🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
 
-## :link: send a request
+## :satellite: send a request
 ```
 » curl -s 'http://0.0.0.0:3000' | yq .content
 Hello World!
