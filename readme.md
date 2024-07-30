@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.png" />
+  <img src="https://raw.githubusercontent.com/wilmoore/wroute/47b3195ec13cf110a99e519ec8c9bcd019921825/logo.png" />
 </p>
 
 [![Build Size](https://img.shields.io/bundlephobia/minzip/wroute?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=wroute)
