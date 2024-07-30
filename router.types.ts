@@ -1,11 +1,9 @@
 import { IncomingMessage, ServerResponse } from 'node:http'
 
-export type HandlerFunction = (req: IncomingMessage, res: ServerResponse) => void
-
-export interface RouteMap {
+export type Method = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | 'HEAD'
+export type RouteHandler = (req: IncomingMessage, res: ServerResponse) => void
+export interface Wroutes {
   [endpoint: string]: {
-    [method in HttpMethod]?: HandlerFunction
+    [method in Method]?: RouteHandler
   }
 }
-
-export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'

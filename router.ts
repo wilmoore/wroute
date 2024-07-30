@@ -1,17 +1,15 @@
 import { IncomingMessage, ServerResponse } from 'node:http';
-import { RouteMap, HttpMethod } from './router.types';
+import { Method, Wroutes } from './router.types';
 
-export const router = (routes: RouteMap) => {
-  const routeMap: RouteMap = { ...routes }
-
+export const router = (routes: Wroutes) => {
   return (req: IncomingMessage, res: ServerResponse) => {
     const { method, url } = req;
 
-    if (typeof method === 'string' && url && (url in routeMap)) {
-      const handler = routeMap[url]?.[method as HttpMethod]
+    if ((typeof url === 'string') && (url in routes)) {
+      const routeHandler = routes[url][method as Method]
 
-      if (handler) {
-        handler(req, res);
+      if (routeHandler) {
+        routeHandler(req, res)
       } else {
         res.writeHead(405, { 'Content-Type': 'text/plain' })
         res.end('Method Not Allowed')
