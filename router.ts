@@ -1,8 +1,11 @@
-import { IncomingMessage, ServerResponse } from 'node:http';
 import { Method, Wroutes } from './router.types';
+import {
+  IncomingMessage as Request,
+  ServerResponse as Response,
+} from 'node:http';
 
 export const router = (routes: Wroutes) => {
-  return (req: IncomingMessage, res: ServerResponse) => {
+  return (req: Request, res: Response) => {
     const { method, url } = req;
 
     if ((typeof url === 'string') && (url in routes)) {
