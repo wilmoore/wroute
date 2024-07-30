@@ -1,13 +1,9 @@
 import { createServer } from 'node:http'
+import { router } from './router'
+import { routes } from './routes'
 
-const PORT = Number(process.env.PORT || 3000)
-const HOST = String(process.env.HOST || `127.0.0.1`)
+const port = Number(process.env.PORT || 3000)
+const host = String(process.env.HOST || `0.0.0.0`)
 
-const server = createServer(async (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' })
-  res.end('Hello World!\n')
-})
-
-server.listen(PORT, HOST, () => console.log(
-  `🚀 Server is running! | Listening on http://${HOST}:${PORT}. | To stop the server, press CTRL+C`
-))
+createServer(router(routes))
+  .listen(port, host, () => console.log(`🚀 Server is running! | Listening on http://${host}:${port}. | To stop the server, press CTRL+C`))
