@@ -1,7 +1,7 @@
 {
   "name": "wroute",
   "version": "0.1.0",
-  "description": "Typed HTTP routing in 0(1) time",
+  "description": "typed http router with constant access time.",
   "main": "router",
   "scripts": {
     "prestart": "sh env.sh",

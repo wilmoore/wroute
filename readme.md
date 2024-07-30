@@ -2,13 +2,12 @@
   <img src="./logo.png" />
 </p>
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/wilmoore/wroute/lint-and-type.yml?branch=main&style=flat&colorA=000000&colorB=000000)](https://github.com/wilmoore/wroute/actions?query=workflow%3ALint)
 [![Build Size](https://img.shields.io/bundlephobia/minzip/wroute?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=wroute)
 [![Version](https://img.shields.io/npm/v/wroute?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/wroute)
 [![Downloads](https://img.shields.io/npm/dt/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/wroute)
 
 ## wroute
-> A bearbones, tiny core, typed http router with constant access time.
+> typed http router with constant access time.
 
 
 ```shell
@@ -17,7 +16,11 @@ pnpm add wroute
 
 ## features
 
-- `O(1)`
+- constant access time
+- no-dependencies
+- typed
+
+## usage
 - `404` status when request is to a missing **endpoint**
 - `405` status when request is to a missing **method**
 
