@@ -37,6 +37,11 @@ server.listen(port, host, () => console.log(
 ))
 ```
 
+```
+» curl -s 'http://0.0.0.0:3000' | yq .content
+Hello World!
+```
+
 ## Licenses
 
 [![LICENSE](http://img.shields.io/npm/l/wroute.svg)](license)
