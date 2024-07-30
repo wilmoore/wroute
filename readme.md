@@ -11,8 +11,7 @@
 pnpm add wroute
 ```
 
-## :rocket: create a server
-###### `server.js`
+## :rocket: create a `server.ts`
 ```js
 import { router } from 'wroute'
 import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
