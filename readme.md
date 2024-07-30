@@ -38,7 +38,7 @@ server.listen(port, host, () => console.log(
 ## :running: run the server
 ```
 » node --watch --env-file=.env -r ts-node/register server
-🚀 Server is running! ({"NODE_ENV":"production"}) | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
+🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
 
 ## :link: send a request
