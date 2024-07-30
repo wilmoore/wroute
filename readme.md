@@ -17,7 +17,7 @@ pnpm add wroute
 
 ## features
 
-- O(1)
+- `O(1)`
 - `404` status when request is to a missing **endpoint**
 - `405` status when request is to a missing **method**
 
