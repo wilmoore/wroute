@@ -1,5 +1,5 @@
 # wroute
-> HTTP servers with **typed** routing in `0(1)` time.
+> Typed HTTP routing in 0(1) time.
 
 ## features
 

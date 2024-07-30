@@ -1,7 +1,7 @@
 {
   "name": "wroute",
   "version": "0.1.0",
-  "description": "Craft zero-overhead HTTP servers with **typed route handlers** in 0(1) time",
+  "description": "Typed HTTP routing in 0(1) time",
   "main": "router",
   "scripts": {
     "prestart": "sh env.sh",
