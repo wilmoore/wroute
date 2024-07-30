@@ -11,10 +11,8 @@
 pnpm add wroute
 ```
 
-## expose a server
-> **PORT** `3000` **HOST** `0.0.0.0`
-
-###### :rocket: `server.js`
+## :rocket: create a server
+###### `server.js`
 ```js
 import { router } from 'wroute'
 import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
@@ -36,7 +34,12 @@ server.listen(port, host, () => console.log(
 ))
 ```
 
-###### :link: send request
+## :running: run the server
+```
+» node --watch --env-file=.env -r ts-node/register server
+```
+
+## :link: send a request
 ```
 » curl -s 'http://0.0.0.0:3000' | yq .content
 Hello World!
