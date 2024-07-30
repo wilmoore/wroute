@@ -1,19 +1,27 @@
 {
   "name": "wroute",
-  "version": "1.0.0",
-  "description": "O(1) HTTP Router",
+  "version": "0.1.0",
+  "description": "Craft zero-overhead HTTP servers with **typed route handlers** in 0(1) time",
   "main": "router",
   "scripts": {
     "prestart": "sh env.sh",
-    "start": "pnpx ts-node server.ts",
-    "start:dev": "pnpx ts-node-dev server"
+    "start": "node --env-file=.env -r ts-node/register server",
+    "prestart:dev": "sh env.sh",
+    "start:dev": "node --watch --env-file=.env -r ts-node/register server"
   },
-  "keywords": [],
+  "keywords": [
+    "opinionated",
+    "typesafe",
+    "http",
+    "router",
+    "typescript"
+  ],
   "author": "Wil Moore III <wil.moore@wilmoore.com>",
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.7",
     "@types/node": "^22.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631"
