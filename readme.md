@@ -19,14 +19,16 @@ import { IncomingMessage as Request, ServerResponse as Response } from 'node:htt
 const port = Number(process.env.PORT || 3000)
 const host = String(process.env.HOST || `0.0.0.0`)
 
-const server = createServer(router({
-  '/': {
-    GET: async (req: Request, res: Response) => {
-      res.writeHead(200, { 'Content-Type': 'application/json' })
-      res.end(JSON.stringify({ content: 'Hello World!' }))
-    }
-  }
-}))
+const server = createServer(
+  router({
+    '/': {
+      GET: async (req: Request, res: Response) => {
+        res.writeHead(200, { 'Content-Type': 'application/json' })
+        res.end(JSON.stringify({ content: 'Hello World!' }))
+      },
+    },
+  })
+)
 
 server.listen(port, host, () => console.log(
   `🚀 Server is running! | Listening on http://${host}:${port}. | To stop the server, press CTRL+C`
