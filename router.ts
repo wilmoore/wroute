@@ -1,8 +1,8 @@
-import { Method, Wroutes } from './router.types';
+import { Method, Wroutes } from './router.types'
 import {
   IncomingMessage as Request,
   ServerResponse as Response,
-} from 'node:http';
+} from 'node:http'
 
 export const router = (routes: Wroutes) => {
   return (req: Request, res: Response) => {
