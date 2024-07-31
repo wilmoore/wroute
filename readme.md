@@ -1,5 +1,5 @@
+ [![LICENSE](http://img.shields.io/npm/l/wroute.svg?style=flat&colorA=000000&colorB=000000)](license) [![Version](https://img.shields.io/npm/v/wroute?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/wroute)
 
-[![Version](https://img.shields.io/npm/v/wroute?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/wroute)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wilmoore/wroute/47b3195ec13cf110a99e519ec8c9bcd019921825/logo.png" />
@@ -73,10 +73,6 @@ HTTP/1.1 405 Method Not Allowed
 Content-Type: text/plain
 ...
 ```
-
-## Licenses
-
-[![LICENSE](http://img.shields.io/npm/l/wroute.svg)](license)
 
 ---
 [`404`]: #404
