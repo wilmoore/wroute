@@ -1,6 +1,6 @@
 {
   "name": "wroute",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "typed http router with constant access time.",
   "main": "router",
   "scripts": {
