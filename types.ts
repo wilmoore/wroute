@@ -3,7 +3,7 @@ import {
   ServerResponse as Response
 } from 'node:http'
 
-export type Method = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | 'HEAD'
+export type Method = 'CONNECT' | 'DELETE' | 'GET' | 'HEAD' | 'OPTIONS' | 'PATCH' | 'POST' | 'PUT' | 'TRACE'
 export type RouteHandler = (req: Request, res: Response, ctx?: { query?: {}, params?: {} }) => void
 export interface Wroutes {
   [endpoint: string]: {
