@@ -1,7 +1,7 @@
  [![LICENSE](http://img.shields.io/npm/l/wroute.svg?style=flat&colorA=000000&colorB=000000)](license) [![npm](https://img.shields.io/npm/v/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.org/package/wroute) [![downloads](http://img.shields.io/npm/dm/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.org/package/wroute) [![bundle size](https://img.shields.io/bundlephobia/minzip/zustand?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=zustand)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/wilmoore/wroute/47b3195ec13cf110a99e519ec8c9bcd019921825/logo.png" />
+  <img src="https://raw.githubusercontent.com/wilmoore/wroute/main/logo.png" />
 </p>
 
 ## wroute
