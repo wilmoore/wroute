@@ -5,8 +5,7 @@
 </p>
 
 ## wroute
-> typed http router with constant access time.
-
+> A minimal [RFC6570] conforming HTTP multiplexer form defining endpoints with URI Template Syntax
 
 ```shell
 pnpm add wroute
@@ -14,9 +13,9 @@ pnpm add wroute
 
 ## features
 
-- constant access time
-- no-dependencies
-- typed
+- [RFC6570] conforming
+- Dependency-free
+- Minimal
 
 ## usage
 - [`404`] status when request is to a missing **endpoint**
@@ -76,3 +75,4 @@ Content-Type: text/plain
 ---
 [`404`]: #404
 [`405`]: #405
+[RFC6570]: https://datatracker.ietf.org/doc/html/rfc6570

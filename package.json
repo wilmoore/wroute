@@ -1,7 +1,7 @@
 {
   "name": "wroute",
-  "version": "0.3.0",
-  "description": "typed http router with constant access time.",
+  "version": "0.4.0",
+  "description": "A minimal [RFC6570] conforming HTTP multiplexer form defining endpoints with URI Template Syntax",
   "main": "router",
   "scripts": {
     "dev": "node --watch --env-file=example/.env.template -r ts-node/register example/server"
