@@ -1,7 +1,4 @@
-import {
-  IncomingMessage as Request,
-  ServerResponse as Response
-} from 'node:http'
+import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
 
 export const posts = {
   GET: async (_: Request, res: Response) => {

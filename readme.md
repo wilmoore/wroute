@@ -5,7 +5,7 @@
 </p>
 
 ## wroute
-> A minimal [RFC6570] conforming HTTP multiplexer for defining endpoints with **typed URI Template** Syntax
+> Minimal [RFC6570] conforming HTTP multiplexer for defining endpoints with **typed URI Template** Syntax
 
 ```shell
 pnpm add wroute
@@ -13,33 +13,41 @@ pnpm add wroute
 
 ## features
 
-- [RFC6570] conforming
-- Dependency-free
-- Minimal
+- [RFC6570]
 - Typed URL & Query Parameters
+- No Dependencies
 
 ## example
+### define routes
+###### `router.ts`
 ```ts
-import { router } from 'wroute'
 import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
+import { router as wroute } from 'wroute'
+
+const routes = {
+  '/': {
+    GET: async (req: Request, res: Response) => {
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ content: 'Hello World!' }))
+    },
+  },
+}
+
+export const router = () => wroute(routes)
+```
+
+###### `server.ts`
+```ts
+import { createServer } from 'node:http'
+import { router } from './router'
 
 const port = Number(process.env.PORT || 3000)
 const host = String(process.env.HOST || `0.0.0.0`)
 
-const server = createServer(
-  router({
-    '/': {
-      GET: async (req: Request, res: Response) => {
-        res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ content: 'Hello World!' }))
-      },
-    },
-  })
-)
-
-server.listen(port, host, () => console.log(
-  `🚀 Server is running! | Listening on http://${host}:${port}. | To stop the server, press CTRL+C`
-))
+createServer(router())
+  .listen(port, host, () => console.log(
+    `🚀 Server is running! | Listening @ http://${host}:${port}. | To stop the server, press CTRL+C`
+  ))
 ```
 
 ###### :rocket: launch the server
