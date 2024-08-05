@@ -5,7 +5,7 @@
 </p>
 
 ## wroute
-> A minimal [RFC6570] conforming HTTP multiplexer form defining endpoints with URI Template Syntax
+> A minimal [RFC6570] conforming HTTP multiplexer for defining endpoints with **typed URI Template** Syntax
 
 ```shell
 pnpm add wroute
@@ -16,12 +16,10 @@ pnpm add wroute
 - [RFC6570] conforming
 - Dependency-free
 - Minimal
+- Typed URL & Query Parameters
 
-## usage
-- [`404`] status when request is to a missing **endpoint**
-- [`405`] status when request is to a missing **method**
-
-```js
+## example
+```ts
 import { router } from 'wroute'
 import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
 
@@ -49,6 +47,10 @@ server.listen(port, host, () => console.log(
 » node --watch --env-file=.env -r ts-node/register server
 🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
+
+## status codes
+- [`404`] status when request is to a missing **endpoint**
+- [`405`] status when request is to a missing **method**
 
 ###### `200`
 ```
