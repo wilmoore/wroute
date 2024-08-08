@@ -5,22 +5,14 @@ import {
 } from 'node:http'
 
 export const router = (routes: Wroutes): (req: Request, res: Response) => void => {
+  const pathname = (url: string) => url.replace('{?', '?{').split('?')[0]
   const routePattern = (templateString: string) => RegExp(`^${templateString.replace(/{(?<parameterName>[0-9a-zA-Z]+)}/g, '(?<$<parameterName>>[0-9a-zA-Z]+)')}$`)
-  const routeMatcher = (templateString: string) => (endpoint: string) => {
-    const [ routeKey ] = templateString.replace('{?', '?{').split('?')
-    return routePattern(routeKey).test(endpoint)
-  }
+  const routeMatcher = (templateString: string) => (endpoint: string) => routePattern(pathname(templateString)).test(endpoint)
 
   return (req: Request, res: Response): void => {
     const { method, url } = req;
     const [ endpoint, querystring ] = (url?.replace('{?', '?{').split('?') ?? ["", ""])
-    const [ routeKey ] = <[string]>Object.keys(routes).filter((uriTemplate) => {
-      const [ routeKey ] = uriTemplate.replace('{?', '?{').split('?')
-      return routeMatcher(routeKey)(endpoint as string)
-    })
-
-    const qs = new URLSearchParams(querystring)
-    console.debug({ method, url, routeKey, endpoint, querystring, qs })
+    const [ routeKey ] = <[string]>Object.keys(routes).filter((uriTemplate) => routeMatcher(pathname(uriTemplate))(endpoint as string))
 
     if (routeKey) {
       const route = routes[routeKey]
@@ -32,7 +24,7 @@ export const router = (routes: Wroutes): (req: Request, res: Response) => void =
           res,
           _: {
             uri: ((endpoint).match(routePattern(routeKey))?.groups || {}),
-            qry: Object.fromEntries(qs.entries())
+            qry: Object.fromEntries((new URLSearchParams(querystring)).entries())
           }
         })
       } else {
