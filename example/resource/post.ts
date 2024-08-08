@@ -1,31 +1,31 @@
-import { IncomingMessage as Request, ServerResponse as Response } from 'node:http'
+import { RouteParameters } from '../../types'
 
 export const posts = {
-  GET: async (_: Request, res: Response) => {
+  GET: async ({ res }: RouteParameters) => {
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ content: [{}] }))
   }
 }
 
 export const postById = {
-  GET: async (req: Request, res: Response, ctx: any) => {
-    const { id } = ctx.params
+  GET: async ({ res, _ }: RouteParameters) => {
+    const id = _.uri.get('id')
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ content: { id, type: 'Post' } }))
   }
 }
 
 export const postComments = {
-  GET: async (_: Request, res: Response, ctx: any) => {
-    const { id: postId } = ctx.params
+  GET: async ({ res, _ }: RouteParameters) => {
+    const id = _.uri.get('id')
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ content: [{ postId }] }))
+    res.end(JSON.stringify({ content: [{ postId: id }] }))
   }
 }
 
 export const postCommentById = {
-  GET: async (_: Request, res: Response, ctx: any) => {
+  GET: async ({ res, _ }: RouteParameters) => {
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ content: { ...ctx.params } }))
+    res.end(JSON.stringify({ content: Object.fromEntries(_.uri) }))
   }
 }
