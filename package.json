@@ -1,6 +1,6 @@
 {
   "name": "wroute",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Minimal RFC6570 conforming HTTP multiplexer for defining endpoints with typed URI Template Syntax",
   "main": "router",
   "scripts": {
