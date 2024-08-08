@@ -5,13 +5,14 @@ import {
 } from 'node:http'
 
 export const router = (routes: Wroutes): (req: Request, res: Response) => void => {
-  const pathname = (url: string) => url.replace('{?', '?{').split('?')[0]
+  const splitUrl = (url: string | undefined) => (url || "").replace('{?', '?{').split('?')
+  const pathname = (url: string) => splitUrl(url)[0]
   const routePattern = (templateString: string) => RegExp(`^${templateString.replace(/{(?<parameterName>[0-9a-zA-Z]+)}/g, '(?<$<parameterName>>[0-9a-zA-Z]+)')}$`)
   const routeMatcher = (templateString: string) => (endpoint: string) => routePattern(pathname(templateString)).test(endpoint)
 
   return (req: Request, res: Response): void => {
     const { method, url } = req;
-    const [ endpoint, querystring ] = (url?.replace('{?', '?{').split('?') ?? ["", ""])
+    const [ endpoint, querystring ] = splitUrl(url) ?? ["", ""]
     const [ routeKey ] = <[string]>Object.keys(routes).filter((uriTemplate) => routeMatcher(pathname(uriTemplate))(endpoint as string))
 
     if (routeKey) {

@@ -5,8 +5,8 @@ import {
 
 export type Method = 'CONNECT' | 'DELETE' | 'GET' | 'HEAD' | 'OPTIONS' | 'PATCH' | 'POST' | 'PUT' | 'TRACE'
 export type Context = {
-  uri: { [key: string]: any },
-  qry: { [key: string]: any },
+  uri: { [key: string]: unknown },
+  qry: { [key: string]: unknown },
 }
 export type RouteParameters = { req?: Request, res: Response, _: Context }
 export type RouteHandler = ({ req, res, _ }: RouteParameters) => void

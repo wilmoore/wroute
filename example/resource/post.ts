@@ -3,29 +3,46 @@ import { RouteParameters } from '../../types'
 export const posts = {
   GET: async ({ res }: RouteParameters) => {
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ content: [{}] }))
+    res.end(JSON.stringify({
+      content: [
+        {}
+      ]
+    }))
   }
 }
 
 export const postById = {
   GET: async ({ res, _ }: RouteParameters) => {
-    const id = _.uri.get('id')
+    const { id } = _.uri
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ content: { id, type: 'Post' } }))
+    res.end(JSON.stringify({
+      content: {
+        id,
+        type: 'Post'
+      }
+    }))
   }
 }
 
 export const postComments = {
   GET: async ({ res, _ }: RouteParameters) => {
-    const id = _.uri.get('id')
+    const { id } = _.uri
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ content: [{ postId: id }] }))
+    res.end(JSON.stringify({
+      content: [
+        {
+          postId: id
+        }
+      ]
+    }))
   }
 }
 
 export const postCommentById = {
   GET: async ({ res, _ }: RouteParameters) => {
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ content: _ }))
+    res.end(JSON.stringify({
+      content: _
+    }))
   }
 }
