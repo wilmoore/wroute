@@ -53,7 +53,8 @@ createServer(router())
 ###### :rocket: launch the server
 ```
 » pnpm i
-» node --watch --env-file=example/.env.template -r ts-node/register example/server
+» touch .env
+» node --watch --env-file=.env -r ts-node/register server
 🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
 
