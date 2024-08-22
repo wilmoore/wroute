@@ -1,4 +1,4 @@
- [![LICENSE](http://img.shields.io/npm/l/wroute.svg?style=flat&colorA=000000&colorB=000000)](license) [![npm](https://img.shields.io/npm/v/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.org/package/wroute) [![downloads](http://img.shields.io/npm/dm/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.org/package/wroute) [![bundle size](https://img.shields.io/bundlephobia/minzip/zustand?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=zustand)
+ [![LICENSE](http://img.shields.io/npm/l/wroute.svg?style=flat&colorA=000000&colorB=000000)](license) [![npm](https://img.shields.io/npm/v/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.org/package/wroute) [![downloads](http://img.shields.io/npm/dm/wroute.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.org/package/wroute) [![bundle size](https://img.shields.io/bundlephobia/minzip/wroute?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=wroute)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wilmoore/wroute/main/logo.png" />
@@ -52,7 +52,8 @@ createServer(router())
 
 ###### :rocket: launch the server
 ```
-» node --watch --env-file=.env -r ts-node/register server
+» pnpm i
+» node --watch --env-file=example/.env.template -r ts-node/register example/server
 🚀 Server is running! | Listening on http://0.0.0.0:3000. | To stop the server, press CTRL+C
 ```
 
